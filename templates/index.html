@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+		media="screen">
+
+</head>
+
+<body>
+	<p class="emaim-bt" id="search">
+		<div class="col-md-12 margin-0">
+		<form action="" method="post">
+			{% csrf_token %}
+			<div class="input-group mb-3 margin-top-20">
+				{{ form.search }}
+<!--				<input type="text" class="form-control" placeholder="Enter the news here" >-->
+				<div class="input-group-append">
+<!--				<button class="search_bt" type="Subscribe"><a href="#">GO</a></button>-->
+					<input type="submit" class="search_bt" value="GO">
+				</div>
+			</div>
+		</form>
+		</div>
+	</p>
+	<div id="disp">
+		<div  >
+			
+				<span class="d-block p-2 " >{{ result | default:"Status of news being fake or real" }}</span>
+			
+		</div>
+		
+	</div>
+
+</body>
+
+</html>
